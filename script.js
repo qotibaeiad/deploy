@@ -41,6 +41,9 @@ function loadPage(page) {
     success: function(data) {
       // Replace the content of the 'content' div with the loaded HTML
       $('#content-container').html(data);
+      drawerClose.addEventListener('click', () => {
+        drawer.classList.add('hidden');
+      });
     },
     error: function() {
       // Handle errors if necessary
