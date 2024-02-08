@@ -26,10 +26,9 @@ function checkLogin() {
   var username = document.getElementById('username').value;
   var password = document.getElementById('password').value;
   if (username === 'abdallh' && password === '123456') {
-     
-      window.location.href = 'https://www.ynet.co.il/home/0,7340,L-8,00.html';
+    window.location.href = 'https://www.ynet.co.il/home/0,7340,L-8,00.html';
   } else {
-      alert('Incorrect username or password');
+    alert('Incorrect username or password');
   }
 }
 
@@ -41,9 +40,10 @@ function loadPage(page) {
     success: function(data) {
       // Replace the content of the 'content' div with the loaded HTML
       $('#content-container').html(data);
-      drawerClose.addEventListener('click', () => {
-        drawer.classList.add('hidden');
-      });
+
+      // Hide the drawer after loading the new page
+      const drawer = document.getElementById('drawer');
+      drawer.classList.add('hidden');
     },
     error: function() {
       // Handle errors if necessary
