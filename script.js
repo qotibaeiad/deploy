@@ -1,7 +1,21 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {  
   const drawerToggle = document.getElementById('drawerToggle');
   const drawerClose = document.getElementById('drawerClose');
   const drawer = document.getElementById('drawer');
+  const dropdownButton = document.getElementById('hs-dropdown-hover-event');
+  const dropdownMenu = document.querySelector('.hs-dropdown-menu');
+
+  dropdownButton.addEventListener('click', () => {
+    dropdownMenu.classList.toggle('opacity-100');
+    dropdownMenu.classList.toggle('hidden');
+  });
+
+  // // Close the dropdown when clicking outside of it
+  // document.addEventListener('click', (event) => {
+  //   if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+  //     dropdownMenu.classList.add('hidden');
+  //   }
+  // });
 
   drawerToggle.addEventListener('click', () => {
     drawer.classList.toggle('hidden');
@@ -26,7 +40,7 @@ function checkLogin() {
   var username = document.getElementById('username').value;
   var password = document.getElementById('password').value;
   if (username === 'abdallh' && password === '123456') {
-    window.location.href = 'index.html';
+    window.location.href = 'https://www.ynet.co.il/home/0,7340,L-8,00.html';
   } else {
     alert('Incorrect username or password');
   }
@@ -51,3 +65,4 @@ function loadPage(page) {
     }
   });
 }
+
