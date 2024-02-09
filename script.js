@@ -155,9 +155,3 @@ function loadPage(page) {
     }
   });
 }
-
-
-
-
-
-
