@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        /* Your existing styles remain unchanged */
+    </style>
+</head>
+<body>
+    <div class="flex justify-center items-center h-screen bg-gray-800">
+        <div class="w-96 p-6 shadow-lg bg-white rounded-md">
+            <h1 class="text-3xl block text-center font-semibold"><i class="fa-solid fa-user"></i> Register</h1>
+            <hr class="mt-3">
+            <div class="mt-3">
+                <label for="username" class="block text-base mb-2">Username</label>
+                <input type="text" id="username" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" placeholder="Enter Username..." />
+            </div>
+            <div class="mt-3">
+                <label for="email" class="block text-base mb-2">Email</label>
+                <input type="email" id="email" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" placeholder="Enter Email..." />
+            </div>
+            <div class="mt-3">
+                <label for="phone" class="block text-base mb-2">Phone</label>
+                <input type="tel" id="phone" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" placeholder="Enter Phone..." />
+            </div>
+            <div class="mt-3">
+                <label for="password" class="block text-base mb-2">Password</label>
+                <input type="password" id="password" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" placeholder="Enter Password..." />
+            </div>
+            <div class="mt-3">
+                <label for="confirmPassword" class="block text-base mb-2">Confirm Password</label>
+                <input type="password" id="confirmPassword" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" placeholder="Confirm Password..." />
+            </div>
+            <div class="mt-3">
+                <label for="country" class="block text-base mb-2">Country</label>
+                <select id="country" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600">
+                    <option value="" disabled selected>Select your country</option>
+                    <option value="usa">United States</option>
+                    <option value="canada">Canada</option>
+                    <option value="uk">United Kingdom</option>
+                    <!-- Add more countries as needed -->
+                </select>
+            </div>
+            <div class="mt-5">
+                <button id="registerBtn" class="border-2 border-bg-gray-800 bg-gray-800 text-white py-1 w-full rounded-md hover:bg-transparent hover:text-gray-800 font-semibold" onclick="validateForm()"><i class="fa-solid fa-right-to-bracket"></i>&nbsp;&nbsp;Register</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById('username').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+            var country = document.getElementById('country').value;
+
+            if (username === '' || email === '' || phone === '' || password === '' || confirmPassword === '' === '' || confirmPassword === '' || country === '') {
+                alert('Please fill in all fields.');
+            } else {
+                if(password != confirmPassword ){
+                    alert('The password does not match');
+                }
+                else{
+                    window.location.href = 'index.html';}
+            }
+        }
+    </script>
+</body>
+</html>
